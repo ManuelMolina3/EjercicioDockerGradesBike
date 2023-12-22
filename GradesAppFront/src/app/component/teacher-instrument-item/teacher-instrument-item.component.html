@@ -1,0 +1,27 @@
+<div class="card mb-3"  style="cursor: pointer;" [routerLink]="['/teacher/subject/', asignaturaId,'instrument', instrument.id]">
+    <div class="row g-0">
+      <div class="col-md-1 align-items-center d-flex justify-content-center">
+        <div class="rounded-circle bg-primary d-flex justify-content-center align-items-center " id="clipboard-icon">
+          <fa-icon [icon]="['fas', 'clipboard-list']" class="text-white fs-3"></fa-icon>
+        </div>
+      </div>
+      <div class="col-md-10" >
+        <div class="card-body">
+          <h5 class="card-title fw-bold fs-2">{{instrument.nombre}}</h5>
+          <p class="card-text"><small class="text-body-secondary ">{{instrument.fecha}}</small></p>
+        </div>
+      </div>
+      <div class="col-md-1 align-items-center d-flex">
+        
+        <button type="button" class="btn" [ngbPopover]="popContent" placement="bottom" (click)="popoverClicked($event)">
+          <fa-icon [icon]="['fas', 'ellipsis-vertical']" class="fs-4"></fa-icon>
+        </button>
+        <ng-template #popContent>
+          <button ngbDropdownItem class="popero w-100"><fa-icon [icon]="['fas', 'pen-to-square']"></fa-icon> Editar</button>
+          <hr />
+          <button ngbDropdownItem class="popero w-100"><fa-icon [icon]="['fas', 'trash']"></fa-icon> <i class="bi bi-trash"></i> Borrar</button>
+      </ng-template>
+      </div>
+    </div>
+</div>
+
