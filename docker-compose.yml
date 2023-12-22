@@ -3,7 +3,7 @@ services:
   app:
     image: 'docker-angular:latest'
     build:
-      context: ./frontend/
+      context: ./GradesAppFront/
       dockerfile: Dockerfile
     expose:
       - 80
@@ -18,7 +18,7 @@ services:
   api:
   image: 'docker-spring-boot-prostgres:latest'
   build:
-      context: ./backend/
+      context: ./GradesAppBack/GradesApp/
       dockerfile: Dockerfile
   expose:
       - 8080
